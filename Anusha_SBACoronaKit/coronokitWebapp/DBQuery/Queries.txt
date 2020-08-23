@@ -1,0 +1,9 @@
+DROP DATABASE app;
+CREATE DATABASE app;
+CREATE TABLE products (`product_id` INT NOT NULL primary key,  `product_name` VARCHAR(50) NOT NULL,`price` DECIMAL(9,2) NOT NULL,`product_description` VARCHAR(100));
+INSERT INTO products values (1,'PPE Kit',3500,'Personal Protection Kit');
+INSERT INTO products values (2,'Hand Sanitizer',50,'Hand sanitizer');
+
+CREATE TABLE Kit ( kitid INT NOT NULL primary key, coronaKitId INT NOT NULL, product_Id INT NOT NULL REFERENCES  products(productid), quantity INT NOT NULL, amount decimal(9,2) NOT NULL );
+
+
